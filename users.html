@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <title>مدیریت کاربران</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <div class="dashboard">
+    <aside class="sidebar">
+      <h2 class="logo">پنل مدیریت</h2>
+      <ul>
+        <li><a href="index.html">داشبورد</a></li>
+        <li><a href="users.html">کاربران</a></li>
+        <li><a href="reports.html">گزارشات</a></li>
+        <li><a href="login.html">خروج</a></li>
+      </ul>
+    </aside>
+    <main class="main-content">
+      <header class="topbar">
+        <h1>پنل مدیریت کاربران</h1>
+        <div><img src="./assets/images/logo.png" alt="لوگو مدیر" width="70" height="70"></div>
+      </header>
+      <h2>لیست کاربران</h2>
+    <input type="text" id="searchInput" placeholder="جستجو بر اساس نام..." oninput="searchUsers()" style="padding:8px; margin-bottom:20px; width:100%; font-family:inherit;">
+      <div class="filter-section">
+        <button onclick="filterUsers('all')">همه</button>
+        <button onclick="filterUsers('مدیر')">مدیران</button>
+        <button onclick="filterUsers('کاربر عادی')">کاربران عادی</button>
+      </div>
+      <table class="latest-orders-user">
+        <thead>
+          <tr>
+            <th>نام</th>
+            <th>نقش</th>
+            <th>عملیات</th>
+            <th>تعداد خرید</th>
+            <th>زمان ماندن در سایت</th>
+          </tr>
+        </thead>
+        <tbody id="userTable"></tbody>
+      </table>
+      <button id="adduserbnt" onclick="showPopup()">➕ افزودن کاربر</button>
+      <div id="popup" class="popup hidden">
+        <div class="popup-content">
+          <h3>افزودن کاربر جدید</h3>
+          <input type="text" id="newName" placeholder="نام و نام خانوادگی">
+          <select id="newRole">
+            <option value="مدیر">مدیر</option>
+            <option value="کاربر عادی">کاربر عادی</option>
+          </select>
+          <button id="done" onclick="addUser()">ثبت</button>
+          <button id="close" onclick="closePopup()">بستن</button>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script src="users.js"></script>
+</body>
+</html>

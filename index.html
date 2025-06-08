@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <title> داشبورد مدیریت سایت</title>
+  <link rel="stylesheet" href="main.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="dashboard">
+    <aside class="sidebar">
+      <h2 class="logo">پنل مدیریت</h2>
+      <ul>
+        <li><a href="index.html">داشبورد</a></li>
+        <li><a href="users.html">کاربران</a></li>
+        <li><a href="reports.html">گزارشات</a></li>
+        <li><a href="login.html">خروج</a></li>
+      </ul>
+    </aside>
+    <main class="main-content">
+      <header class="topbar">
+        <h1>داشبورد</h1>
+        <div><img src="./assets/images/logo.png" alt="لوگو مدیر" width="70" height="70"></div>
+      </header>
+      <section class="cards">
+        <div class="card" id="userCountCard"></div>
+        <div class="card" id="todaySalesCard"></div>
+        <div class="card" id="growthCard"></div>
+      </section>
+      <section class="dashboard-analytics">
+        <section class="dashboard-analytics-right">
+          <div class="card" id="yearlyProfitCard"></div>
+          <div class="card" id="userGrowthCard"></div>
+          <div class="notifications" id="notifications"></div>
+          <div class="latest-users">
+            <h3>آخرین کاربران ثبت‌شده</h3>
+            <ul id="latestUsersList"></ul>
+          </div>
+        </section>
+        <section class="dashboard-analytics-left">
+          <div class="chart-block">
+            <h3>نمودار سود ماهانه</h3>
+            <canvas id="monthlyChart" width="400" height="350"></canvas>
+          </div>
+          <div class="chart-block">
+            <h3>سهم هر بخش از سود</h3>
+            <canvas id="sectionChart" width="400" height="200"></canvas>
+          </div>
+        </section>
+      </section>
+      <section class="latest-orders">
+        <h3>آخرین سفارشات</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>کد سفارش</th>
+              <th>نام مشتری</th>
+              <th>مبلغ</th>
+              <th>وضعیت</th>
+            </tr>
+          </thead>
+          <tbody id="ordersTable"></tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+  <script src="data.js" type="module"></script>
+  <script src="render.js" type="module"></script>
+  <script src="chart.js" type="module"></script>
+</body>
+</html>

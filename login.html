@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <title>ورود به سیستم</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <div class="login-container">
+    <div class="login-box">
+      <img src="./assets/images/logo.png" alt="لوگو" width="100">
+      <h2>ورود به پنل مدیریت</h2>
+      <form id="loginForm">
+        <input type="text" placeholder="نام کاربری" required>
+        <input type="password" placeholder="رمز عبور" required>
+        <button type="submit">ورود</button>
+      </form>
+    </div>
+  </div>
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      // در حالت واقعی اینجا اعتبارسنجی انجام می‌شد
+      window.location.href = "index.html";
+    });
+  </script>
+</body>
+</html>

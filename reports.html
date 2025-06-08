@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>گزارشات</title>
+  <link rel="stylesheet" href="main.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="dashboard">
+    <aside class="sidebar">
+      <h2 class="logo">پنل مدیریت</h2>
+      <ul>
+        <li><a href="index.html">داشبورد</a></li>
+        <li><a href="users.html">کاربران</a></li>
+        <li><a href="reports.html" class="active">گزارشات</a></li>
+        <li><a href="login.html" onclick="logout()">خروج</a></li>
+      </ul>
+    </aside>
+    <main class="main-content">
+      <header class="topbar">
+        <h1>گزارشات جامع</h1>
+        <div><img src="./assets/images/logo.png" alt="لوگو مدیر" width="70" height="70"></div>
+      </header>
+      
+      <div class="report-controls">
+        <div class="report-filters">
+          <select id="reportType" class="report-select">
+            <option value="monthly">گزارش ماهانه</option>
+            <option value="yearly">گزارش سالانه</option>
+            <option value="users">گزارش کاربران</option>
+          </select>
+          
+          <select id="yearSelect" class="report-select">
+            <option value="1402">سال 1402</option>
+            <option value="1401">سال 1401</option>
+          </select>
+          
+          <button class="report-btn" onclick="generateReport()">
+            <span>تولید گزارش</span>
+          </button>
+        </div>
+        
+        <div class="export-buttons">
+          <button class="export-btn pdf-btn" onclick="exportToPDF()">
+            <span>خروجی PDF</span>
+          </button>
+          <button class="export-btn excel-btn" onclick="exportToExcel()">
+            <span>خروجی Excel</span>
+          </button>
+        </div>
+      </div>
+      
+      <div class="chart-container">
+        <canvas id="reportChart"></canvas>
+      </div>
+      
+      <div class="report-summary">
+        <div class="summary-card">
+          <h3>کل فروش</h3>
+          <p>۲,۵۴۰,۰۰۰ تومان</p>
+        </div>
+        <div class="summary-card">
+          <h3>کاربران جدید</h3>
+          <p>۴۲ نفر</p>
+        </div>
+        <div class="summary-card">
+          <h3>رشد ماهانه</h3>
+          <p style="color: #2ecc71;">+۱۸٪</p>
+        </div>
+      </div>
+    </main>
+  </div>
+  
+  <script src="data.js"></script>
+  <script src="reports.js"></script>
+</body>
+</html>
